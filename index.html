@@ -25,7 +25,7 @@
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
                         locationParagraph = `Tu ubicación es: Latitud ${latitude}, Longitud ${longitude}`;
-                        console.log("La ubicacion fue: "+locationParagraph);
+                        alert("La ubicacion fue: "+locationParagraph);
                     },
                     (error) => {
                         switch (error.code) {
@@ -42,12 +42,12 @@
                                 locationParagraph = "Ocurrió un error desconocido.";
                                 break;
                         }
-                        console.log("La ubicacion fue: "+locationParagraph);
+                        alert("La ubicacion fue: "+locationParagraph);
                     }
                 );
             } else {
                 locationParagraph = "La Geolocalización no es soportada por este navegador.";
-                console.log("La ubicacion fue: "+locationParagraph);
+                alert("La ubicacion fue: "+locationParagraph);
             }
 
             
