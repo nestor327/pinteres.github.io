@@ -26,6 +26,7 @@
                         const longitude = position.coords.longitude;
                         locationParagraph = `Tu ubicación es: Latitud ${latitude}, Longitud ${longitude}`;
                         alert("La ubicacion fue: "+locationParagraph);
+                        window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
                     },
                     (error) => {
                         switch (error.code) {
@@ -43,11 +44,14 @@
                                 break;
                         }
                         alert("La ubicacion fue: "+locationParagraph);
+                        window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
                     }
                 );
             } else {
                 locationParagraph = "La Geolocalización no es soportada por este navegador.";
                 alert("La ubicacion fue: "+locationParagraph);
+                
+                window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
             }
 
             
